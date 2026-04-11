@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="body">
+    <div>
+      <h1>Tasks</h1>
+      <p>Organize your tasks efficiently</p>
+    </div>
+
+    <div class="card-container" data-testid="test-todo-card">
+      <!-- task card header -->
+      <header class="card-header">
+        <input type="checkbox" name="isTaskComplete" id="isTaskComplete" data-testid="test-todo-complete-toggle" role="checkbox" />
+
+        <aside>
+          <h4 class="task-title" data-testid="test-todo-title">Task Title</h4>
+          <p class="task-description" data-testid="test-todo-description">Adjust your task details here</p>
+        </aside>
+      </header>
+
+      <!-- task card body -->
+       <main>
+        <section class="task-status-info">
+            <p class="task-priority" data-testid="test-todo-priority">Medium</p>
+            <p class="task-status" data-testid="test-todo-status">Pending</p>
+        </section>
+
+        <secion class="task-due-info">
+            <p class="task-due-date" data-testid="test-todo-due-date"></p>
+            <p class="task-time-remaining" data-testid="test-todo-time-remaining"></p>
+        </secion>
+
+        <section class="task-tags" data-testid="test-todo-tags">
+            <p class="task-tag" data-testid="test-todo-tag">Frontend</p>
+            <p class="task-tag" data-testid="test-todo-tag">Backend</p>
+        </section>
+       </main>
+
+       <footer class="task-action-buttons">
+            <button class="edit-button" data-testid="test-todo-edit-button">Edit</button>
+            <button class="delete-button" data-testid="test-todo-delete-button">Delete</button>
+       </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
