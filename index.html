@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="body">
     <div>
@@ -12,39 +12,146 @@
       <p>Organize your tasks efficiently</p>
     </div>
 
-    <div class="card-container" data-testid="test-todo-card">
-      <!-- task card header -->
+    <div class="card-container task-container" data-testid="test-todo-card">
       <header class="card-header">
-        <input type="checkbox" name="isTaskComplete" id="isTaskComplete" data-testid="test-todo-complete-toggle" role="checkbox" />
+        <input
+          required
+          type="checkbox"
+          name="isTaskComplete"
+          id="isTaskComplete"
+          data-testid="test-todo-complete-toggle"
+          role="checkbox"
+        />
 
         <aside>
           <h4 class="task-title" data-testid="test-todo-title">Task Title</h4>
-          <p class="task-description" data-testid="test-todo-description">Adjust your task details here</p>
+          <p class="task-description" data-testid="test-todo-description">
+            Adjust your task details here
+          </p>
         </aside>
       </header>
 
-      <!-- task card body -->
-       <main>
+      <main>
         <section class="task-status-info">
-            <p class="task-priority" data-testid="test-todo-priority">Medium</p>
-            <p class="task-status" data-testid="test-todo-status">Pending</p>
+          <p class="task-priority" data-testid="test-todo-priority-indicator">
+            Medium
+          </p>
+          <p class="task-status" data-testid="test-todo-status">Pending</p>
         </section>
 
         <secion class="task-due-info">
-            <p class="task-due-date" data-testid="test-todo-due-date"></p>
-            <p class="task-time-remaining" data-testid="test-todo-time-remaining"></p>
+          <p
+            class="task-due-date"
+            data-testid="test-todo-overdue-indicator"
+          ></p>
+          <p
+            class="task-time-remaining"
+            data-testid="test-todo-time-remaining"
+          ></p>
         </secion>
 
         <section class="task-tags" data-testid="test-todo-tags">
-            <p class="task-tag" data-testid="test-todo-tag">Frontend</p>
-            <p class="task-tag" data-testid="test-todo-tag">Backend</p>
+          <p class="task-tag" data-testid="test-todo-tag">Frontend</p>
+          <p class="task-tag" data-testid="test-todo-tag">Backend</p>
         </section>
-       </main>
+      </main>
 
-       <footer class="task-action-buttons">
-            <button class="edit-button" data-testid="test-todo-edit-button">Edit</button>
-            <button class="delete-button" data-testid="test-todo-delete-button">Delete</button>
-       </footer>
+      <footer class="task-action-buttons">
+        <button class="edit-button" data-testid="test-todo-edit-button">
+          Edit
+        </button>
+        <button class="delete-button" data-testid="test-todo-delete-button">
+          Delete
+        </button>
+      </footer>
+    </div>
+
+    <div class="edit-form-container card-container">
+      <form action="" autocomplete="on" data-testid="test-todo-edit-form" class="edit-form">
+        <div>     
+          <label for="task-title">Task Title</label>
+          <input
+            required
+            type="text"
+            id="task-title"
+            name="taskTitle"
+            placeholder="Enter task title"
+            data-testid="test-todo-edit-title-input required"
+          />
+        </div>
+
+        <div>
+          <label for="description">Description</label>
+          <textarea
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Enter task description"
+            rows="3"
+            data-testid="test-todo-edit-description-input required"
+          >
+          </textarea>
+        </div>
+
+        <div class="priority-date">
+          <div>
+            <label for="priority">Priority</label>
+            <select
+              id="priority"
+              name="priority"
+              data-testid="test-todo-edit-priority-select"
+            >
+              <option value="">Select priority</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="due-date">Due Date</label>
+            <input
+              required
+              type="date"
+              id="due-date"
+              name="dueDate"
+              data-testid="test-todo-edit-due-date-input required"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="status">Status</label>
+          <select
+            id="status"
+            name="status"
+            data-testid="test-todo-status-control"
+          >
+            <option value="">Select status</option>
+            <option value="pending">Pending</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Done</option>
+          </select>
+        </div>
+
+        <div class="btns-container">
+          <button
+            type="button"
+            data-testid="test-todo-cancel-button"
+            id="cancel-button"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            id="save-button"
+            class="save-button"
+            data-testid="test-todo-save-button"
+          >
+            Save
+          </button>
+        </div>
+      </form>
     </div>
 
     <script src="main.js"></script>
